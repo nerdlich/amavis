@@ -13,6 +13,15 @@ $allowed_added_header_fields{lc('X-Spam-Report')} = 1;
 $spam_quarantine_to  = undef;
 $sa_tag_level_deflt  = -100;
 
+<% if @local_domains_maps -%>
+@local_domains_maps = ([
+    <% @local_domains_maps.each do |domain| -%>
+    "<%= domain %>,"
+    ".$mydomain",
+    <% end -%>
+]);
+<% end -%>
+
 <% if @final_virus_destiny %>
 $final_virus_destiny=<%= @final_virus_destiny %>
 <% end %>
