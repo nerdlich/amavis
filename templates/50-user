@@ -16,7 +16,7 @@ $sa_tag_level_deflt  = -100;
 <% if @local_domains_maps -%>
 @local_domains_maps = ([
     <% @local_domains_maps.each do |domain| -%>
-    "<%= domain %>,"
+    "<%= domain %>",
     <% end -%>
     ".$mydomain"
 ]);
