@@ -6,6 +6,7 @@ class amavis::config(
   $final_spam_destiny       =undef,
   $final_bad_header_destiny =undef,
   $local_domains_maps       =undef,
+  $enable_dkim_verification = 1,
 ) {
   include amavis
   file { '/etc/amavis/conf.d/50-user':
